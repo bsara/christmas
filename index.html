@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <title>Sara Family Christmas Gift Exchange</title>
+
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Slabo+13px">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i">
+    <script src="//use.fontawesome.com/7ee45b1ea8.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+
+  <body>
+
+    <header>
+      <h1 id="pageTitle">
+        <span>Sara Family</span>
+        <span>Christmas Gift Exchange</span>
+      </h1>
+    </header>
+
+    <main>
+
+      <div id="inputWrapper">
+        <button id="prevYearButton"><i class="fa fa-chevron-left"></i></button>
+        <input id="yearTextbox" type="number" step="1" min="2013" placeholder="Year" />
+        <button id="nextYearButton"><i class="fa fa-chevron-right"></i></button>
+      </div>
+
+      <table id="giftExchanges">
+        <tbody>
+          <tr id="emilyRow">
+            <td>Emily</td>
+            <td class="giver-middle-text">gives to</td>
+            <td id="emilyRecipientName"></td>
+          </tr>
+          <tr id="danRow" class="hidden">
+            <td>Dan</td>
+            <td class="giver-middle-text">gives to</td>
+            <td id="danRecipientName"></td>
+          </tr>
+          <tr id="brandonRow">
+            <td>Brandon</td>
+            <td class="giver-middle-text">gives to</td>
+            <td id="brandonRecipientName"></td>
+          </tr>
+          <tr id="jasonRow">
+            <td>Jason</td>
+            <td class="giver-middle-text">gives to</td>
+            <td id="jasonRecipientName"></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </main>
+
+    <footer>
+    </footer>
+
+  </body>
+
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+
+</html>

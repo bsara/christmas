@@ -1,0 +1,188 @@
+*,
+*::before,
+*::after {
+  -webkit-font-smoothing:  antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  box-sizing:  border-box;
+}
+
+
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size:   20px;
+}
+
+
+body {
+  padding:    50px 0;
+  color:      #111;
+  background: #f8f8f8;
+}
+
+
+h1 {
+  margin:      0;
+  padding:     0;
+  font-size:   2.75rem;
+  font-weight: 300;
+  text-align:  center;
+}
+
+
+button {
+  position:       relative;
+  height:         1.50em;
+  width:          1.50em;
+  font-size:      1.25rem;
+  text-align:     center;
+  vertical-align: text-bottom;
+  background:     #ddd;
+  border:         none;
+  border-radius:  2px;
+  box-shadow:     0 1px 3px rgba(0, 0, 0, 0.12),
+                  0 1px 2px rgba(0, 0, 0, 0.24);
+  transition:     all 0.30s cubic-bezier(0.25, 0.80, 0.25, 1);
+}
+
+button,
+button > *,
+button > *::before,
+button > *::after {
+  line-height: 1.5em !important;
+  user-select: none;
+}
+
+button > *,
+button > *::before,
+button > *::after {
+  max-height: calc(1.5em - 2px);
+}
+
+button:hover {
+  cursor:     pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+              0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+button:active {
+  color:      #000;
+  background: #bbb;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16),
+              0 2px 5px rgba(0, 0, 0, 0.23);
+}
+
+button:disabled {
+  cursor:     default;
+  color:      #aaa;
+  box-shadow: none;
+}
+
+
+input[type='number'] {
+  height:        1.50em;
+  margin:        0;
+  padding:       0 0.25rem;
+  font-family:   'Source Sans Pro', sans-serif;
+  font-size:     2rem;
+  color:         #333;
+  background:    #fff;
+  border:        0.0625rem solid #bbb;
+  border-radius: 5px;
+}
+
+
+.hidden {
+  display: none;
+}
+
+
+
+header {
+  margin-bottom: 100px;
+}
+
+header #pageTitle {
+  display:         flex;
+  flex-direction:  row;
+  flex-wrap:       wrap;
+  justify-content: center;
+  font-family:     'Slabo 13px', serif;
+}
+
+header #pageTitle *:first-child {
+  white-space: nowrap;
+}
+
+@media (min-width: calc(34 * 2.75rem)) {
+  header #pageTitle *:not(:last-child) {
+    margin-right: 0.25em;
+  }
+}
+
+
+main {
+  max-width:  1024px;
+  margin:     auto;
+  text-align: center;
+  color:      #333;
+}
+
+
+#inputWrapper {
+  position: relative;
+}
+
+
+#yearTextbox {
+  width:      4em;
+  margin:     0 5px;
+  text-align: center;
+}
+
+
+#prevYearButton > * {
+  width: 1em;
+  margin: auto;
+}
+
+
+#giftExchanges {
+  margin-top:     75px;
+  margin-left:    auto;
+  margin-right:   auto;
+  font-size:      2.25rem;
+  font-weight:    300;
+  text-align:     left;
+  border-spacing: 0;
+}
+
+#giftExchanges td {
+  margin:  0;
+  padding: 10px 0;
+}
+
+#giftExchanges td {
+  padding-left:  1em;
+  padding-right: 1em;
+}
+
+/* #giftExchanges td:last-child {
+  padding-right: 1em;
+}
+
+#giftExchanges td:not(:last-child) {
+  padding-right: 3em;
+} */
+
+#giftExchanges tr:not(:last-child) td {
+  border-bottom: 0.0625rem solid #ccc;
+}
+
+#giftExchanges .giver-middle-text {
+  padding-left:  0;
+  padding-right: 0;
+  font-size:     0.60em;
+  font-weight:   200;
+  font-style:    italic;
+}
