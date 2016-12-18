@@ -4,7 +4,14 @@
   -webkit-font-smoothing:  antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  box-sizing:  border-box;
+  box-sizing: border-box;
+}
+
+
+html,
+body {
+  width:  100%;
+  height: 100%;
 }
 
 
@@ -13,11 +20,23 @@ html {
   font-size:   20px;
 }
 
+@media screen and (max-device-width: 767px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 
 body {
   padding:    50px 0;
   color:      #111;
   background: #f8f8f8;
+}
+
+@media screen and (max-device-width: 767px) {
+  body {
+    padding: 25px 10px;
+  }
 }
 
 
@@ -34,13 +53,13 @@ button {
   position:       relative;
   height:         1.50em;
   width:          1.50em;
-  font-size:      1.25rem;
+  font-size:      1.25em;
   text-align:     center;
   vertical-align: text-bottom;
-  background:     #ddd;
+  background:     transparent;/*#ddd;*/
   border:         none;
   border-radius:  2px;
-  box-shadow:     0 1px 3px rgba(0, 0, 0, 0.12),
+  text-shadow:    0 1px 3px rgba(0, 0, 0, 0.12),
                   0 1px 2px rgba(0, 0, 0, 0.24);
   transition:     all 0.30s cubic-bezier(0.25, 0.80, 0.25, 1);
 }
@@ -60,34 +79,35 @@ button > *::after {
 }
 
 button:hover {
-  cursor:     pointer;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
-              0 3px 6px rgba(0, 0, 0, 0.23);
+  cursor:      pointer;
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+               0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-button:active {
+button:active:not(:disabled) {
   color:      #000;
-  background: #bbb;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16),
-              0 2px 5px rgba(0, 0, 0, 0.23);
+  /*background: #bbb;*/
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.16),
+               0 2px 5px rgba(0, 0, 0, 0.23);
 }
 
 button:disabled {
-  cursor:     default;
-  color:      #aaa;
-  box-shadow: none;
+  cursor:      default;
+  color:       #aaa;
+  text-shadow: none;
 }
 
 
 input[type='number'] {
   height:        1.50em;
   margin:        0;
-  padding:       0 0.25rem;
+  padding:       0 0.25em;
   font-family:   'Source Sans Pro', sans-serif;
-  font-size:     2rem;
+  font-size:     2em;
+  text-align:    center;
   color:         #333;
   background:    #fff;
-  border:        0.0625rem solid #bbb;
+  border:        1px solid #bbb;
   border-radius: 5px;
 }
 
@@ -100,6 +120,12 @@ input[type='number'] {
 
 header {
   margin-bottom: 100px;
+}
+
+@media screen and (max-device-width: 767px) {
+  header {
+    margin-bottom: 40px;
+  }
 }
 
 header #pageTitle {
@@ -133,6 +159,12 @@ main {
   position: relative;
 }
 
+@media screen and (max-device-width: 767px) {
+  #inputWrapper {
+    font-size: 1.25rem;
+  }
+}
+
 
 #yearTextbox {
   width:      4em;
@@ -142,41 +174,54 @@ main {
 
 
 #prevYearButton > * {
-  width: 1em;
+  width:  1em;
   margin: auto;
 }
 
 
 #giftExchanges {
-  margin-top:     75px;
-  margin-left:    auto;
-  margin-right:   auto;
-  font-size:      2.25rem;
+  margin:         75px auto;
+  font-size:      2.25em;
   font-weight:    300;
   text-align:     left;
   border-spacing: 0;
 }
 
+@media screen and (max-device-width: 767px)
+              and (orientation: portrait) {
+  #giftExchanges {
+    width: 100%;
+  }
+}
+
+@media screen and (max-device-width: 767px) {
+  #giftExchanges {
+    margin: 35px auto;
+  }
+}
+
+
+
 #giftExchanges td {
   margin:  0;
-  padding: 10px 0;
+  padding: 10px 1em;
 }
 
-#giftExchanges td {
-  padding-left:  1em;
-  padding-right: 1em;
+@media screen and (max-device-width: 767px) {
+  #giftExchanges td:first-child,
+  #giftExchanges td:last-child {
+    width: 35%;
+  }
+
+  #giftExchanges td {
+    padding-left:  0.5em;
+    padding-right: 0.5em;
+  }
 }
 
-/* #giftExchanges td:last-child {
-  padding-right: 1em;
-}
-
-#giftExchanges td:not(:last-child) {
-  padding-right: 3em;
-} */
 
 #giftExchanges tr:not(:last-child) td {
-  border-bottom: 0.0625rem solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 #giftExchanges .giver-middle-text {
@@ -185,4 +230,5 @@ main {
   font-size:     0.60em;
   font-weight:   200;
   font-style:    italic;
+  text-align:    center;
 }
