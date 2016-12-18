@@ -39,8 +39,8 @@
     PEOPLE_WITHOUT_DAN.forEach(populateRecipientNameElementFunc);
 
 
-    $_yearTextbox.addEventListener('input',    _onChangeYearTextbox);
-    $_yearTextbox.addEventListener('change',   _onChangeYearTextbox);
+    $_yearTextbox.addEventListener('input',  _onChangeYearTextbox);
+    $_yearTextbox.addEventListener('change', _onChangeYearTextbox);
 
     $_prevYearButton.addEventListener('click', _onClickPrevYearButton);
     $_nextYearButton.addEventListener('click', _onClickNextYearButton);
@@ -67,6 +67,7 @@
   function _onClickPrevYearButton() {
     if (!$_prevYearButton.disabled) {
       $_yearTextbox.value = ($_yearTextbox.valueAsNumber - 1);
+      $_yearTextbox.dispatchEvent(new Event('change'));
     }
   }
 
@@ -74,6 +75,7 @@
   function _onClickNextYearButton() {
     if (!$_nextYearButton.disabled) {
       $_yearTextbox.value = ($_yearTextbox.valueAsNumber + 1);
+      $_yearTextbox.dispatchEvent(new Event('change'));
     }
   }
 
