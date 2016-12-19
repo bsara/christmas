@@ -97,6 +97,10 @@ button:disabled {
   text-shadow: none;
 }
 
+button:focus {
+  outline: 0;
+}
+
 
 input[type='number'] {
   height:        1.50em;
